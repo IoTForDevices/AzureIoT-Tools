@@ -15,5 +15,15 @@ In individual enrollments you don't need to install a root or intermediate X.509
 Execute the script that can be found in this folder and pass a root-folder and a device name where the self signed device certificate will be created.
 
 ``` sh
-./create-single-enrollment.sh --root-folder /mnt/c/Source/Keys/mst01-tst --registration-id mst01
+./create-single-enrollment-azure-rtos.sh --root-folder /mnt/c/Source/Keys/mst01-tst --registration-id mst01
 ```
+
+Executing the above shown script creates a new folder (it removes it first if a folder with the same name already exists) to store all certificate files in.
+
+The script creates the following files in the specified folder:
+
+![self-signed device key files](../Media/img_SelfSignedDeviceCertificate.png)
+
+The actual certificates (*.cert.pem) can be uploaded to an IoT Central application's individual enrollment. The actual certificate and private key are also stored in the device firmware. For this reason they are converted to two different C arrays that can be found in the file ```cert.c```.
+
+> NOTE: Make sure that you use the same name for device-id in the IoT Central application and the registration-id in the script. The registration-id can only contain alphanumerics and “-“ – but no spaces.

@@ -9,5 +9,6 @@ Types of certificates that will be used:
 - Intermediate Certificate (stored in IoT Hub / DPS and used to generate IoT Device Certificates)
 - Verification Certificate (used to verify the uploaded Intermediate certificate)
 - Device Certificates in different formats, created with the Intermediate Certificate
+- Device Certificates for self-signed devices
 
 Even though these scripts can be executed stand-alone, they are meant to be called from higher level sample scenarios, for instance to use X.509 certificates in combination with an IoT Hub or a DPS Service.

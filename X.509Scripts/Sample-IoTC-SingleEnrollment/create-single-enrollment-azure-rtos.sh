@@ -52,12 +52,6 @@ if [[ -z "$registration_id" || -z "$root_folder" ]]; then
 fi
 
 # Create a new device key
-echo ""
-echo ""
-echo "*********************************************************************"
-echo "Creating a new file system and a self-signed X.509 Device Certificate"
-echo "*********************************************************************"
-$common_script_root/create-selfsigned-device-filesystem.sh -r ${root_folder}
 $common_script_root/create-selfsigned-device-cert.sh -r ${root_folder} -i ${registration_id}
 
 exit 0
